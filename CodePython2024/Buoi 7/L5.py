@@ -1,0 +1,145 @@
+from turtle import *
+window = Screen()
+control = Turtle()
+control.speed(500)
+control.begin_fill()
+
+control.color("red")
+control.forward(300)
+control.left(90)
+control.forward(150)
+control.left(90)
+control.forward(300)
+control.left(90)
+control.forward(150)
+control.left(90)
+control.end_fill()
+
+control.penup()
+control.goto(140, 110)
+control.pendown()
+
+control.begin_fill()
+control.color("yellow")
+for i in range(3):
+    control.forward(35)
+    control.left(120)
+
+
+control.penup()
+control.goto(100, 110)
+control.pendown()
+
+control.forward(115)
+control.right(145)
+control.forward(115)
+control.right(145)
+control.forward(70)
+
+control.end_fill()
+
+control.penup()
+control.goto(100, 110)
+control.pendown()
+
+control.begin_fill()
+control.color("yellow")
+control.right(102)
+control.forward(115)
+control.left(145)
+control.forward(70)
+control.end_fill()
+
+control.penup()
+control.goto(0, 0)
+control.pendown()
+
+control.color("black")
+control.right(0)
+control.forward(100)
+control.right(58)
+control.forward(75)
+
+control.penup()
+control.goto(-35, 100)
+control.pendown()
+
+control.begin_fill()
+control.color("black")
+control.right(145)
+control.forward(300)
+control.right(90)
+control.forward(5)
+control.right(90)
+control.forward(300)
+control.right(90)
+control.forward(5)
+control.end_fill()
+
+control.penup()
+control.goto(-35, -200)
+control.pendown()
+
+control.begin_fill()
+control.color("pink")
+control.forward(500)
+control.right(45)
+control.forward(80)
+control.right(135)
+control.forward(600)
+control.right(125)
+control.forward(79)
+control.end_fill()
+
+control.penup()
+control.goto(-35, -258)
+control.pendown()
+
+control.begin_fill()
+control.color("red")
+control.right(145)
+control.forward(200)
+control.left(90)
+control.forward(500)
+control.left(90)
+control.forward(200)
+control.end_fill()
+
+control.penup()
+control.goto(100, -350)
+control.pendown()
+
+control.begin_fill()
+control.color("yellow")
+for i in range (4):
+    control.forward(50)
+    control.left(90)
+control.end_fill()
+
+control.penup()
+control.goto(400, -350)
+control.pendown()
+
+control.begin_fill()
+control.color("yellow")
+for i in range (4):
+    control.forward(50)
+    control.left(90)
+control.end_fill()
+
+control.penup()
+control.goto(250, -350)
+control.pendown()
+
+control.begin_fill()
+control.color("yellow")
+control.forward(5)
+control.left(90)
+control.forward(50)
+control.left(90)
+control.forward(113)
+control.left(90)
+control.forward(50)
+
+control.end_fill()
+window.mainloop()

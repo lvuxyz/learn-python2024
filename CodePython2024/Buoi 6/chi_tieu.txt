@@ -1,0 +1,4 @@
+Tiền điện nước: 200000
+Tiền ăn: 130000
+Tiền kí túc xá: 400000
+Tiền xăng xe: 50000
