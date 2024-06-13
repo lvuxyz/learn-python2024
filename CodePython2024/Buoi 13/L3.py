@@ -1,30 +1,41 @@
 import sqlite3
 
-with sqlite3.connect("BookInfo.db") as db:
-    cursor = db.cursor()
+# Kết nối đến cơ sở dữ liệu (tạo mới nếu chưa tồn tại)
+conn = sqlite3.connect('BookInfo.db')
+c = conn.cursor()
 
-"""cursor.execute('''CREATE TABLE BookInfo
-(Name TEXT NOT NULL,
-PlaceOfBirth TEXT)''')
-"""
+# Tạo bảng Authors
+c.execute('''CREATE TABLE Authors
+                (ID INTEGER PRIMARY KEY AUTOINCREMENT, 
+                Name TEXT,
+                PlaceOfBirth TEXT)''')
 
-newName = input("Nhap name cua ban: ")
-newPlaceOfBirth = input("Nhap placeofbirth cua ban: ")
-cursor.execute("""INSERT INTO BookInfo (Name, PlaceOfBirth)
-VALUES (?, ?)""", (newName, newPlaceOfBirth))
+# Chèn dữ liệu vào bảng Authors
+authors = [('Jane Austen', 'England'),
+           ('Leo Tolstoy', 'Russia'),
+           ('Gabriel Garcia', 'Colombia')]
 
+c.executemany('INSERT INTO Authors (Name, PlaceOfBirth) VALUES (?, ?)', authors)
 
-"""cursor.execute('''CREATE TABLE BookAndData
-(BookID INTEGER PRIMARY KEY,
-Title TEXT NOT NULL,
-Author INTEGER NOT NULL,
-DatePublished INTEGER)''')
-"""
-'''newID = int(input("Nhap id cua ban: "))
-newTitle = input("Nhap Title cua ban: ")
-newAuthor = int(input("Nhap Author cua ban: "))
-newDate = input("Nhap DatePublished cua ban: ")
-cursor.execute("""INSERT INTO BookAndData (BookID, Title, Author, DatePublished)
-VALUES (?, ?, ?, ?)""", (newID, newTitle, newAuthor, newDate))'''
+# Tạo bảng Books
+c.execute('''CREATE TABLE Books
+                (BookID INTEGER PRIMARY KEY AUTOINCREMENT,
+                AuthorID INTEGER, 
+                Title TEXT,
+                PublishedDate TEXT,
+                FOREIGN KEY(AuthorID) REFERENCES Authors(ID))''')
 
-db.commit()
+# Chèn dữ liệu vào bảng Books
+books = [(1, 'Pride and Prejudice', '1813-01-28'),
+         (1, 'Sense and Sensibility', '1811-01-01'),
+         (2, 'War and Peace', '1869-01-01'),
+         (2, 'Anna Karenina', '1877-01-01'),
+         (3, 'One Hundred Years', '1967-06-05')]
+
+c.executemany('INSERT INTO Books (AuthorID, Title, PublishedDate) VALUES (?, ?, ?)', books)
+
+# Lưu thay đổi và đóng kết nối
+conn.commit()
+conn.close()
+
+print("Cơ sở dữ liệu BookInfo đã được tạo thành công!")
