@@ -23,6 +23,9 @@ def save_to_database():
     conn.commit()
     conn.close()
 
+def exit_login():
+    window.destroy()
+
 label_login = Label(window, text="Login")
 label_login.place(x=150, y=10)
 
@@ -40,5 +43,8 @@ entry_pass.place(x=100, y=80)
 
 login_button = Button(window, text="Login", command=save_to_database)
 login_button.place(x=180, y=120)
+
+login_exit = Button(window, text="Exit", command=exit_login)
+login_exit.place(x=100, y=120)
 
 window.mainloop()

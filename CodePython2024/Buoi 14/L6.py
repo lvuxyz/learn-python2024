@@ -1,6 +1,6 @@
 import sqlite3
 
-conn = sqlite3.connect('BookInfo.db')
+conn = sqlite3.connect('../Buoi 13/BookInfo.db')
 c = conn.cursor()
 
 author_name = input("Nhập tên tác giả: ")
@@ -12,7 +12,7 @@ c.execute('''SELECT Books.Title, Books.PublishedDate, Authors.Name
 
 books = c.fetchall()
 
-with open('books.txt', 'w', encoding='utf-8') as f:
+with open('../Buoi 13/books.txt', 'w', encoding='utf-8') as f:
     for book in books:
         book_info = '---'.join([str(item) for item in book])
         f.write(book_info + '\n')
