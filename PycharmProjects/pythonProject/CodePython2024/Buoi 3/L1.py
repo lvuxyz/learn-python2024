@@ -1,0 +1,10 @@
+# In ra lời chào
+print("Chào bạn, bạn tên là gì?")
+ten = input("Tên tôi là: ")
+print(f"Rất vui được gặp bạn, {ten}!")
+print(f"Nhà bạn ở đâu thế {ten}")
+nha = input("Nhà tôi ở: ")
+print("ồ")
+print(f"{nha} sao. chỗ đó có rat nhiều các hải sản phải không ?")
+hai_san = input("Đúng rồi, có các loại sau: ")
+print(f"{hai_san} toàn các loại hải sản ngon, tôi rất thích món tôm đó hihi")

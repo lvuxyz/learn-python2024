@@ -1,0 +1,16 @@
+"""dung dau # va print in ra ten cua ban"""
+print("                                            ##        ##")
+print("                                         ##   ##    ##")
+print("                                       ##       ##")
+
+print("##                     ##         ##                    ##")
+print(" ##                   ##          ##                    ##")
+print("  ##                 ##           ##                    ##")
+print("   ##               ##            ##                    ##")
+print("    ##             ##             ##                    ##")
+print("     ##           ##              ##                    ##")
+print("      ##         ##               ##                    ##")
+print("       ##       ##                ##                    ##")
+print("        ##     ##                 ##                    ##")
+print("         ##   ##                  ##                    ##")
+print("           ##                     ########################")
